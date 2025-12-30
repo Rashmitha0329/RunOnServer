@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-12-30T15:16:56 IST" name="iween Test Suite" finished-at="2025-12-30T15:17:31 IST" duration-ms="34955">
+    <groups>
+    </groups>
+    <test started-at="2025-12-30T15:16:56 IST" name=" Search Tests" finished-at="2025-12-30T15:17:31 IST" duration-ms="34561">
+      <class name="com.iween.OneWay.TCCP_1">
+        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.iween.OneWay.TCCP_1@52354202]" started-at="2025-12-30T15:16:57 IST" name="setup" finished-at="2025-12-30T15:17:03 IST" duration-ms="5389" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Windows]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[public void com.iween.OneWay.TCCP_1.myTest(java.util.Map) throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="myTest(java.util.Map)[pri:0, instance:com.iween.OneWay.TCCP_1@52354202]" started-at="2025-12-30T15:17:03 IST" name="myTest" data-provider="excelData" finished-at="2025-12-30T15:17:30 IST" duration-ms="27904" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{AdultsCounts=1, RefundableInfo=Non-Refundable,Refundable, FareType=ECO VALUEs,ECONOMY CONVENIENCEs, airLine=Air Indias,Qatar Airwayss, Depart From=SIN, Going To=DXB, InfantsCount=1, ArrivalFilter=00 -06,18-00, DepartureFilter=00 -06,18-00, Stops=1 Stop,2 stops, SKIP=, Class=Economy, ChildrenCount=1}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- myTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.iween.OneWay.TCCP_1@52354202]" started-at="2025-12-30T15:17:30 IST" name="tearDown" finished-at="2025-12-30T15:17:31 IST" duration-ms="297" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.iween.OneWay.TCCP_1 -->
+    </test> <!--  Search Tests -->
+    <test started-at="2025-12-30T15:17:31 IST" name="OneWay1" finished-at="2025-12-30T15:17:31 IST" duration-ms="0">
+    </test> <!-- OneWay1 -->
+    <test started-at="2025-12-30T15:17:31 IST" name="OneWay2" finished-at="2025-12-30T15:17:31 IST" duration-ms="1">
+    </test> <!-- OneWay2 -->
+    <test started-at="2025-12-30T15:17:31 IST" name=" onway Tests" finished-at="2025-12-30T15:17:31 IST" duration-ms="0">
+    </test> <!--  onway Tests -->
+    <test started-at="2025-12-30T15:17:31 IST" name="SearchToBookingOneWay" finished-at="2025-12-30T15:17:31 IST" duration-ms="1">
+    </test> <!-- SearchToBookingOneWay -->
+    <test started-at="2025-12-30T15:17:31 IST" name="SearchToBookingRoundTrip" finished-at="2025-12-30T15:17:31 IST" duration-ms="0">
+    </test> <!-- SearchToBookingRoundTrip -->
+  </suite> <!-- iween Test Suite -->
+</testng-results>
