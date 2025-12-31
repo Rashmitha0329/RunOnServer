@@ -125,7 +125,7 @@ public class ExcelUtilities {
 
 	    //String path = "src\\test\\resources\\testData\\SkyTravellerUAE1.xlsx";  // your actual file path
 	    
-	    String path = "src/test/resources/testData/SkyTravellerUAE1.xlsx";  // your actual file path
+	    String path = "src/test/resources/testData/testdataServer.xlsx";  // your actual file path
 
 	    try (FileInputStream fis = new FileInputStream(path);
 	         Workbook workbook = new XSSFWorkbook(fis)) {

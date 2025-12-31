@@ -1,8 +1,10 @@
 package com.skytraveller.pageObjects1;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -15,61 +17,73 @@ public class loginPage extends BasePage{
 		super(driver);// calls BasePage constructor
 	}
 
-	@FindBy(xpath="//img[@src]")
-	WebElement imageLogo;
-
-
-	@FindBy(xpath="//*[text()='User ID']/following-sibling::input")
-	WebElement userName;
-
-
-	@FindBy(xpath="//*[text()='Password']/following-sibling::input")
-	WebElement password;
-
-	@FindBy(xpath="//button[text()='Sign In']")
-	WebElement submit;
-
-
-	public void validateLogo(ExtentTest test) {
-		try {
-			Thread.sleep(1000);
-			if (imageLogo.isDisplayed()) {
-				test.log(Status.PASS, "Image is displayed on the Home Page");
-			} else {
-				test.log(Status.FAIL, "Image is not displayed on the Home Page");
-				ScreenshotUtil.captureAndAttachScreenshot1(driver, test, Status.FAIL, 
-						"Image is not displayed", "LogoImageIsBroken");
-			}
-		} catch (Exception e) {
-			test.log(Status.FAIL, "Exception occurred while validating logo: " + e.getMessage());
-			ScreenshotUtil.captureAndAttachScreenshot1(driver, test, Status.FAIL, 
-					"Exception while validating logo", "LogoValidationException");
-		}
-	}
-
-	public void UserLogin(String uName, String pwd) throws InterruptedException
+	
+	
+	
+ 
+@FindBy(xpath="//input[@placeholder='Username']")
+	WebElement userNameHrm;
+ 
+@FindBy(xpath="//input[@placeholder='Password']")
+	WebElement passwordHrm;
+ 
+public void UserLoginHRM(String uName, String pwd) throws InterruptedException
 	{
 		try
 		{
 		System.out.println(uName);
 		System.out.println(pwd);
 		Thread.sleep(2000);
-		userName.sendKeys(uName);
-		password.sendKeys(pwd);
+		userNameHrm.sendKeys(uName);
+		passwordHrm.sendKeys(pwd);
 		//submit.click();
 		}
 		catch(Exception e)
 		{
+			
 		  e.printStackTrace();
+		  Assert.fail();
 		}
  
-	} 
-
- public void clickOnSubmitButton()
- {
-	 submit.click();
- }
-
+	}
+	
+	public void clickOnLoginButtonHRM()
+	{
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
+	}
+	
+	public void searchHRM(ExtentTest test) throws InterruptedException
+	{
+		driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys("Admin");
+		test.log(Status.INFO,"Searched for Admin");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//li[@class='oxd-main-menu-item-wrapper']/a")).click();
+		test.log(Status.INFO,"clicked on Admin DropDown");
+		Thread.sleep(3000);
+		
+	}
+ 
+	public void validateAdminPageisDisplayed(ExtentTest test)
+	{
+		try {
+		WebElement adminPage=driver.findElement(By.xpath("//h5[text()='System Users']"));
+		if(adminPage.isDisplayed())
+		{
+			test.log(Status.PASS,"adminPage is displayed");
+		}
+		else
+		{
+			test.log(Status.PASS,"adminPage is not displayed");
+		}
+		}
+		catch(Exception e)
+		{
+			System.out.println("Exception validateAdminPageisDisplayed "+e.getMessage());
+		}
+	}
+	
+	
+ 
 
 
 }
